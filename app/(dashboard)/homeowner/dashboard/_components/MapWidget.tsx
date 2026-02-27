@@ -17,6 +17,14 @@ const Map = dynamic(() => import("./MapClient"), {
   ),
 });
 
-export default function MapWidget() {
-  return <Map />;
+interface MapWidgetProps {
+  selectedCategory?: string | null;
+  isTracking?: boolean;
+}
+
+export default function MapWidget({
+  selectedCategory,
+  isTracking,
+}: MapWidgetProps) {
+  return <Map selectedCategory={selectedCategory} isTracking={isTracking} />;
 }
